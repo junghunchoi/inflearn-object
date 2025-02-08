@@ -1,8 +1,12 @@
 package study.inflearnobject.reservation.domain;
 
 
+import lombok.Getter;
+import lombok.Setter;
 import study.inflearnobject.generic.Money;
 
+@Getter
+@Setter
 public class DiscountPolicy {
     public enum PolicyType { PERCENT_POLICY, AMOUNT_POLICY }
 
@@ -27,22 +31,6 @@ public class DiscountPolicy {
         this.percent = percent;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getMovieId() {
-        return movieId;
-    }
-
-    public void setMovieId(Long movieId) {
-        this.movieId = movieId;
-    }
-
     public boolean isAmountPolicy() {
         return PolicyType.AMOUNT_POLICY.equals(policyType);
     }
@@ -51,27 +39,4 @@ public class DiscountPolicy {
         return PolicyType.PERCENT_POLICY.equals(policyType);
     }
 
-    public PolicyType getPolicyType() {
-        return policyType;
-    }
-
-    public void setPolicyType(PolicyType policyType) {
-        this.policyType = policyType;
-    }
-
-    public Money getAmount() {
-        return amount;
-    }
-
-    public void setAmount(Money amount) {
-        this.amount = amount;
-    }
-
-    public Double getPercent() {
-        return percent;
-    }
-
-    public void setPercent(Double percent) {
-        this.percent = percent;
-    }
 }
