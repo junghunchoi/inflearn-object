@@ -1,4 +1,4 @@
-package study.inflearnobject.reservation.domain;
+package study.inflearnobject.process.reservation.domain;
 
 import java.time.DayOfWeek;
 import java.time.LocalDateTime;

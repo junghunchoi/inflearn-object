@@ -1,7 +1,7 @@
-package study.inflearnobject.reservation.persistence.memory;
+package study.inflearnobject.process.reservation.persistence.memory;
 
-import study.inflearnobject.reservation.domain.DiscountCondition;
-import study.inflearnobject.reservation.persistence.DiscountConditionDAO;
+import study.inflearnobject.process.reservation.domain.DiscountCondition;
+import study.inflearnobject.process.reservation.persistence.DiscountConditionDAO;
 
 import java.util.List;
 

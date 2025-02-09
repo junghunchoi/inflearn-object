@@ -1,4 +1,6 @@
-package study.inflearnobject.reservation.domain;
+package study.inflearnobject.process.reservation.domain;
+
+import study.inflearnobject.process.generic.TimeInterval;
 
 import java.time.DayOfWeek;
 import java.time.LocalTime;
@@ -10,8 +12,7 @@ public class DiscountCondition {
     private Long policyId;
     private ConditionType conditionType;
     private DayOfWeek dayOfWeek;
-    private LocalTime startTime;
-    private LocalTime endTime;
+    private TimeInterval interval;
     private Integer sequence;
 
     public DiscountCondition() {
@@ -26,9 +27,28 @@ public class DiscountCondition {
         this.policyId = policyId;
         this.conditionType = conditionType;
         this.dayOfWeek = dayOfWeek;
-        this.startTime = startTime;
-        this.endTime = endTime;
+        this.interval = interval;
         this.sequence = sequence;
+    }
+
+    // 조건이 추가
+    public boolean isSatisfiedBy(Screening screening) {
+        if (isPeriodCondition()) {
+            if (screening.isPlayedIn(dayOfWeek, interval.getStartTime(), interval.getEndTime())) {
+                return true;
+            }
+        } else if (isSequenceCondition()){
+            if (sequence.equals(screening.getSequence())) {
+                return true;
+            }
+        } else if (isCombinedCondition()) {
+            if (screening.isPlayedIn(dayOfWeek, interval.getStartTime(), interval.getEndTime()) &&
+                    sequence.equals(screening.getSequence())) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public Long getId() {
@@ -75,20 +95,12 @@ public class DiscountCondition {
         this.dayOfWeek = dayOfWeek;
     }
 
-    public LocalTime getStartTime() {
-        return startTime;
+    public TimeInterval getInterval() {
+        return interval;
     }
 
-    public void setStartTime(LocalTime startTime) {
-        this.startTime = startTime;
-    }
-
-    public LocalTime getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(LocalTime endTime) {
-        this.endTime = endTime;
+    public void setInterval(TimeInterval interval) {
+        this.interval = interval;
     }
 
     public Integer getSequence() {

@@ -1,7 +1,7 @@
-package study.inflearnobject.reservation.persistence.memory;
+package study.inflearnobject.process.reservation.persistence.memory;
 
-import study.inflearnobject.reservation.domain.Movie;
-import study.inflearnobject.reservation.persistence.MovieDAO;
+import study.inflearnobject.process.reservation.domain.Movie;
+import study.inflearnobject.process.reservation.persistence.MovieDAO;
 
 public class MovieMemoryDAO extends InMemoryDAO<Movie> implements MovieDAO {
     @Override

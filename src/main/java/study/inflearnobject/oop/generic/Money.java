@@ -1,4 +1,4 @@
-package study.inflearnobject.generic;
+package study.inflearnobject.oop.generic;
 
 import java.math.BigDecimal;
 import java.util.Collection;

@@ -1,4 +1,4 @@
-package study.inflearnobject.reservation.persistence.memory;
+package study.inflearnobject.process.reservation.persistence.memory;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;

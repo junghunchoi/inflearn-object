@@ -1,7 +1,7 @@
-package study.inflearnobject.reservation.domain;
+package study.inflearnobject.process.reservation.domain;
 
 
-import study.inflearnobject.generic.Money;
+import study.inflearnobject.process.generic.Money;
 
 public class Reservation {
     private Long id;

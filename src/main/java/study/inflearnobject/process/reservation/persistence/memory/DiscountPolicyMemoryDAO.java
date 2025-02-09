@@ -1,8 +1,8 @@
-package study.inflearnobject.reservation.persistence.memory;
+package study.inflearnobject.process.reservation.persistence.memory;
 
 
-import study.inflearnobject.reservation.domain.DiscountPolicy;
-import study.inflearnobject.reservation.persistence.DiscountPolicyDAO;
+import study.inflearnobject.process.reservation.domain.DiscountPolicy;
+import study.inflearnobject.process.reservation.persistence.DiscountPolicyDAO;
 
 public class DiscountPolicyMemoryDAO extends InMemoryDAO<DiscountPolicy> implements DiscountPolicyDAO {
     @Override

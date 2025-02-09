@@ -1,8 +1,8 @@
 package study.inflearnobject.reservation;
 
-import study.inflearnobject.generic.Money;
-import study.inflearnobject.reservation.domain.*;
-import study.inflearnobject.reservation.persistence.*;
+import study.inflearnobject.process.generic.Money;
+import study.inflearnobject.process.reservation.domain.*;
+import study.inflearnobject.process.reservation.persistence.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -10,7 +10,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-import study.inflearnobject.reservation.service.ReservationService;
+import study.inflearnobject.process.reservation.service.ReservationService;
 
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -18,10 +18,10 @@ import java.util.List;
 
 import static java.time.DayOfWeek.MONDAY;
 import static java.time.DayOfWeek.WEDNESDAY;
-import static study.inflearnobject.reservation.domain.DiscountCondition.ConditionType.PERIOD_CONDITION;
-import static study.inflearnobject.reservation.domain.DiscountCondition.ConditionType.SEQUENCE_CONDITION;
-import static study.inflearnobject.reservation.domain.DiscountPolicy.PolicyType.AMOUNT_POLICY;
-import static study.inflearnobject.reservation.domain.DiscountPolicy.PolicyType.PERCENT_POLICY;
+import static study.inflearnobject.process.reservation.domain.DiscountCondition.ConditionType.PERIOD_CONDITION;
+import static study.inflearnobject.process.reservation.domain.DiscountCondition.ConditionType.SEQUENCE_CONDITION;
+import static study.inflearnobject.process.reservation.domain.DiscountPolicy.PolicyType.AMOUNT_POLICY;
+import static study.inflearnobject.process.reservation.domain.DiscountPolicy.PolicyType.PERCENT_POLICY;
 
 @ExtendWith(MockitoExtension.class)
 public class ReservationServiceTest {

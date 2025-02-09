@@ -1,6 +1,6 @@
-package study.inflearnobject.reservation.persistence;
+package study.inflearnobject.process.reservation.persistence;
 
-import study.inflearnobject.reservation.domain.DiscountPolicy;
+import study.inflearnobject.process.reservation.domain.DiscountPolicy;
 
 public interface DiscountPolicyDAO {
     DiscountPolicy selectDiscountPolicy(Long movieId);
