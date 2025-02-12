@@ -1,5 +1,6 @@
 package study.inflearnobject.reservation;
 
+import study.inflearnobject.oop.reservation.OverlappedDiscountPolicy;
 import study.inflearnobject.process.generic.Money;
 import study.inflearnobject.process.reservation.domain.*;
 import study.inflearnobject.process.reservation.persistence.*;
@@ -12,6 +13,7 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import study.inflearnobject.process.reservation.service.ReservationService;
 
+import java.time.DayOfWeek;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
@@ -93,5 +95,32 @@ public class ReservationServiceTest {
 
         // then
         Assertions.assertEquals(reservation.getFee(), Money.wons(18000));
+    }
+
+    @Test
+    public void 중복할인정책_계산하기() {
+        // given
+        Movie movie = new Movie(
+                "한산",
+                Money.wons(10_000L),
+                new OverlappedDiscountPolicy(
+                        new PercentDiscountPolicy(
+                                0.1,
+                                new SequenceCondition(1),
+                                new SequenceCondition(3),
+                                new PeriodCondition(DayOfWeek.MONDAY, LocalTime.of(10, 0), LocalTime.of(12, 10))),
+                        new AmountDiscountPolicy(
+                                Money.wons(1000L),
+                                new SequenceCondition(1),
+                                new SequenceCondition(3),
+                                new PeriodCondition(DayOfWeek.MONDAY, LocalTime.of(10, 0), LocalTime.of(12, 10)))));
+
+        Screening screening = new Screening(movie, 1, LocalDateTime.of(2024,12,11, 18, 0));
+
+        // when
+        Money fee = movie.calculateFee(screening);
+
+        // then
+        assertEquals(Money.wons(8000L), fee);
     }
 }
