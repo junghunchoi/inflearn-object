@@ -7,8 +7,6 @@ import study.inflearnobject.process.reservation.domain.Movie;
 import study.inflearnobject.process.reservation.domain.Reservation;
 import study.inflearnobject.process.reservation.domain.Screening;
 import study.inflearnobject.process.reservation.persistence.*;
-import study.inflearnobject.reservation.domain.*;
-import study.inflearnobject.reservation.persistence.*;
 
 public class ReservationService {
     private ScreeningDAO screeningDAO;
