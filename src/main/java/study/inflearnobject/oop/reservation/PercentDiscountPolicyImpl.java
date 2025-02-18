@@ -7,8 +7,9 @@ import java.util.List;
 public class PercentDiscountPolicyImpl extends DiscountPolicy {
     private Double percent;
 
-    public PercentDiscountPolicyImpl(List<DiscountCondition> conditions) {
+    public PercentDiscountPolicyImpl(DiscountCondition... conditions) {
         super(conditions);
+        this.percent = percent;
     }
 
     @Override

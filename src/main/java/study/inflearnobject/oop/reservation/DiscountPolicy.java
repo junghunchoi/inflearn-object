@@ -11,8 +11,7 @@ public abstract class DiscountPolicy {
     private Long id;
     private List<DiscountCondition> conditions;
 
-    public DiscountPolicy(Long id, DiscountCondition ... conditionss) {
-        this.id = id;
+    public DiscountPolicy(DiscountCondition ... conditionss) {
         this.conditions = conditions;
     }
 

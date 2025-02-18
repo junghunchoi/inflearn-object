@@ -5,7 +5,7 @@ import study.inflearnobject.oop.generic.Money;
 import java.util.List;
 
 public class AmountDiscountPolicyImpl extends DiscountPolicy {
-    public AmountDiscountPolicyImpl(List<DiscountCondition> conditions) {
+    public AmountDiscountPolicyImpl(DiscountCondition... conditions) {
         super(conditions);
     }
 
